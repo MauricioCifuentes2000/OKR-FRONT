@@ -8,7 +8,7 @@ import GoalsList from '../screens/GoalsList';
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-// StackNavigator para gestionar objetivos
+//StackNavigator
 const GoalsStack = () => {
   return (
     <Stack.Navigator initialRouteName="GoalsList">
@@ -18,7 +18,7 @@ const GoalsStack = () => {
   );
 };
 
-// DrawerNavigator principal
+//DrawerNavigator 
 const AppNavigator = () => {
   return (
     <Drawer.Navigator initialRouteName="Home">

@@ -8,11 +8,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      {isLoggedIn ? (
-        <DrawerNavigator />
-      ) : (
-        <Login onLogin={() => setIsLoggedIn(true)} />
-      )}
+      {isLoggedIn ? (<DrawerNavigator />) : (<Login onLogin={() => setIsLoggedIn(true)}/>)}
     </NavigationContainer>
   );
 };

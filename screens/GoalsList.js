@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import Navbar from '../components/Navbar'; 
+import Navbar from '../components/Navbar';
+import ScreenWrapper from '../components/ScreenWrapper'; 
+
 const GoalsList = () => {
   const goals = [
     { id: '1', title: 'Objetivo 1', description: 'Descripción 1' },
@@ -8,7 +10,7 @@ const GoalsList = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <ScreenWrapper>
       <Navbar title="Lista de Objetivos" />
       <FlatList
         data={goals}
@@ -19,15 +21,15 @@ const GoalsList = () => {
             <Text>{item.description}</Text>
           </View>
         )}
+        contentContainerStyle={styles.listContainer} 
       />
-    </View>
+    </ScreenWrapper>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
+  listContainer: {
+    padding: 20, 
   },
   goal: {
     borderWidth: 1,
@@ -35,6 +37,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 15,
     marginBottom: 10,
+    backgroundColor: 'rgba(255, 255, 255, 0.8)', 
   },
   goalTitle: {
     fontSize: 18,

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet } from 'react-native';
 import AppButton from '../components/AppButton';
 import Navbar from '../components/Navbar';
+import ScreenWrapper from '../components/ScreenWrapper';
 
 const AddGoal = () => {
   const [formData, setFormData] = useState({
@@ -13,20 +14,22 @@ const AddGoal = () => {
   });
 
   return (
-    <View style={styles.container}>
-      <Navbar title="Agregar Objetivo" />
-      <TextInput
-        style={styles.input}
-        placeholder="Título"
-        onChangeText={(text) => setFormData({ ...formData, title: text })}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Descripción"
-        onChangeText={(text) => setFormData({ ...formData, description: text })}
-      />
-      <AppButton title="Guardar Objetivo" onPress={() => alert('Objetivo Guardado')} />
-    </View>
+    <ScreenWrapper>
+      <View style={styles.container}>
+        <Navbar title="Agregar Objetivo" />
+        <TextInput
+          style={styles.input}
+          placeholder="Título"
+          onChangeText={(text) => setFormData({ ...formData, title: text })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Descripción"
+          onChangeText={(text) => setFormData({ ...formData, description: text })}
+        />
+        <AppButton title="Guardar Objetivo" onPress={() => alert('Objetivo Guardado')} />
+      </View>
+    </ScreenWrapper>
   );
 };
 
@@ -45,3 +48,4 @@ const styles = StyleSheet.create({
 });
 
 export default AddGoal;
+
